@@ -1,0 +1,20 @@
+<div id="user-data">
+    <div id="avatar">
+        <img *ngIf="userData.avatar === 'male'" src="./../../../assets/images/maleAvatar.jpg" alt="Male Avatar">
+        <img *ngIf="userData.avatar === 'female'" src="./../../../assets/images/femaleAvatar.jpg" alt="Female Avatar">
+        <img *ngIf="userData.avatar === 'none'" src="./../../../assets/images/noAvatar.jpg" alt="Female Avatar">
+    </div>
+    <div id="topics-created">
+        <h1>Created Topics</h1>
+        <div *ngIf="userTopics" id="created-topics-container">
+            <div *ngFor="let topic of userTopics">
+                <a>{{topic.topicName}},</a>
+            </div>
+        </div>
+    </div>
+    <div id="info">
+        <p id="username">Username: <span>{{userData.username}}</span></p>
+        <p id="email">Email: <span>{{userData.email}}</span></p>
+        <p id="avatar-text">Avatar: <span>{{userData.avatar}}</span></p>
+    </div>
+</div>

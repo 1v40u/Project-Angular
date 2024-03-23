@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    justify-content: center; 
+    background-color: #110d1f;
+    height: 3.75rem;
+    z-index: 1000;
+}
+
+header a{
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    color: #888;
+    font-family: "Madimi One";
+    font-size: 45px;
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+<div *ngIf="isLoading" id="topics-container">
+    <app-loader />
+</div>
+
+<div *ngIf="!isLoading" id="comments-container">
+    <form id="addCommentForm" #addCommentForm="ngForm" (ngSubmit)="addCommentHandler(addCommentForm)">
+        <h1>Add comment</h1>
+        <textarea id="addText" name="addText" ngModel required #addTextInput="ngModel"></textarea>
+        <div *ngIf="addTextInput.touched">
+            <div *ngIf="addTextInput.errors?.['required']" class="error">You should type something if you want to add comment!!!</div>
+        </div>
+        <button>Add</button>
+    </form>
+    <div *ngFor="let comment of commentsArr" class="comment"><p class="author">Author: {{comment.author}}</p><div class="commentsText">{{comment.text}}</div></div>    
+</div>

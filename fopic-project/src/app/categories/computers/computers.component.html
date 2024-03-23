@@ -1,0 +1,7 @@
+<div *ngIf="isLoading" id="topics-container">
+    <app-loader />
+</div>
+
+<div *ngIf="!isLoading" id="topics-container">
+    <div routerLink="/comments/{{topic.topicName}}" *ngFor="let topic of topicsArr " class="topic"><p class="topic-name">{{ topic.topicName }}</p><p class="creator">Created by: {{ topic.creator }}</p></div>    
+</div>

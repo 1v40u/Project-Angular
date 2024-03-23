@@ -1,0 +1,25 @@
+<form #createTopicForm="ngForm" (ngSubmit)="createTopicSubmitHandler(createTopicForm)">
+    <h1>Create topic</h1>
+    <div id="topic-name">
+        <label for="topic-name">Topic Name</label>
+        <input type="text" name="topic-name" ngModel required minlength="6" #topicNameInput="ngModel" />
+    </div>
+    <div *ngIf="topicNameInput.touched">
+        <div *ngIf="topicNameInput.errors?.['required']" class="error">Topic Name is required!!!</div>
+        <div *ngIf="topicNameInput.errors?.['minlength']" class="error">Topic Name must be at least 6 characters long!!!</div>
+    </div>
+    <div id="topic-category">
+        <label for="categories">Choose categorie</label>
+        <select id="categories" name="categories" ngModel required #categoryInput="ngModel">
+            <option value="uncategorized">Uncategorized</option>
+            <option value="cars">Cars</option>
+            <option value="coding">Coding</option>
+            <option value="computers">Computers</option>
+            <option value="gaming">Gaming</option>
+          </select>
+    </div>
+    <div *ngIf="categoryInput.touched">
+        <div *ngIf="categoryInput.errors?.['required']" class="error">Choose category!!!</div>
+    </div>
+    <button type="submit">Create</button>
+</form>

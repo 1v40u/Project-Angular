@@ -1,0 +1,21 @@
+<div id="navigation">
+    <p>User</p>
+    <div id="user">
+        <a *ngIf="!username" routerLink="/register">Register</a>
+        <a *ngIf="!username" routerLink="/login">Login</a>
+        <button *ngIf="username" (click)="logout()">Logout</button>
+        <a *ngIf="username" routerLink="/profile-info">Profile-info</a>
+    </div>
+    <p>Categories</p>
+    <div id="categories">
+        <a routerLink="/categories/cars">Cars</a>
+        <a routerLink="/categories/coding">Coding</a>
+        <a routerLink="/categories/computers">Computers</a>
+        <a routerLink="/categories/gaming">Gaming</a>
+        <a routerLink="/categories/uncategorized">Uncategorized</a>
+    </div>
+    <p>Create</p>
+    <div id="create">
+        <a *ngIf="username" routerLink="/create-topic">Create-topic</a>
+    </div>
+</div>

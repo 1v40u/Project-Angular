@@ -1,0 +1,39 @@
+#topics-container{
+    background-color: #221d31;
+    height: fit-content;
+    min-height: 560px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1250px;
+}
+
+.topic{
+    height: 300px;
+    width: 400px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #302a49;
+    flex-direction: column;
+    transition: ease;
+}
+
+.topic:hover{
+    background-color: #1b1727;
+}
+
+.topic-name{
+    color: #888;
+    font-family: "Madimi One";
+    font-size: 40px;
+}
+
+.creator{
+    color: #888;
+    font-size: 20px;
+    font-family: "Madimi One";
+}
